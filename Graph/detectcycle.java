@@ -25,6 +25,22 @@ public class detectcycle {
            }
            return false;
     }
+    public static boolean detect(ArrayList<ArrayList<Integer>> adj,boolean isvistied[])
+    {
+        int n = adj.size();
+        for(int i =0;i<n;i++)
+        {
+            if(isvistied[i]==false)
+            {
+                boolean result=iscycle(i,adj,isvistied);
+                if(result==true)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
     public static void main(String[] args) {
         
     }

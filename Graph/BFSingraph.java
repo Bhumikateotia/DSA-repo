@@ -14,9 +14,9 @@ public class BFSingraph {
           while (q.isEmpty()==false)
           {
 
-        int curr=q.remove();
-        ans.add(curr);
-        for(int conn:adj.get(curr))
+          int curr=q.remove();
+          ans.add(curr);
+          for(int conn:adj.get(curr))
         {
             if(conn==0)
             {
@@ -27,9 +27,7 @@ public class BFSingraph {
             
         }
          return ans;
-       
     }
-    
 
     }
     public static void main(String[] args)

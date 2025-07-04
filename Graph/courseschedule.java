@@ -1,20 +1,24 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.*;
+import java.util.Queue;
 
-public class toplogycalsort{
-    static boolean detectcycleindirectedgraph(ArrayList<ArrayList<Integer>> adj)
+public class courseschedule {
+    public static boolean courseschedulling(int n , int[][] pre)
     {
-        int n = adj.size();
-        int indegree[]=new int[n];
-        for(int curr=0;curr<n;curr++)
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+        int indegree[]= new int[n];
+        for(int i =0;i<n;i++)
         {
-            for(int conn:adj.get(curr))
-            {
-                indegree[conn]++;
-            }
+            adj.add(new ArrayList<>());
         }
-        Queue<Integer> q = new LinkedList<>();
+        for(int i =0;i<pre.length;i++)
+        {
+            int a = pre[i][0];
+            int b = pre[i][1];
+            adj.get(b).add(a);
+            indegree[a]++;
+        }
+         Queue<Integer> q = new LinkedList<>();
         for(int i=0;i<n;i++)
         {
             if(indegree[i]==0)
@@ -37,15 +41,17 @@ public class toplogycalsort{
         }
         if(ans.size()==n)// no cycle
         {
-            return false;
+            return true;
         }
         else// cycle 
         {
-            return true;
+            return false;
         }
+
     }
-public static void main(String[] args) {
+    public static void main(String[] args) {
+        
+        
+    }
     
 }
-}
-

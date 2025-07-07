@@ -39,7 +39,6 @@ class components
         }
         else
         {
-
             parent[pa]=pb;
             weight[pb]+=weight[pa];
         
